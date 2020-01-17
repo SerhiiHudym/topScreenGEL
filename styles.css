@@ -216,7 +216,7 @@ display: flex;
 
 .centerCurrencies {
     display: flex;
-    width: 43vw;
+    /* width: 15vw; */
 }
 
 .symbolName {
@@ -246,9 +246,11 @@ display: flex;
     color: #003399;
     font-family: "magistral";
     /* font-size: 155px; */
-    font-size: 11vh;
+    font-size: 13vh;
     padding-top: 1.8vh;
     font-weight: 700;
+    margin-right: 4vw;
+    margin-left: 4vw;
     /* line-height: 118px; */
     text-transform: uppercase;
     /* margin-right: 93px; */
@@ -262,9 +264,9 @@ display: flex;
 color: #e6301f;
 font-family: "digital";
 /* font-size: 179px; */
-font-size: 13vh;
-margin-left: 6vw;
-margin-right: 2vw;
+font-size: 15vh;
+/* margin-left: 6vw; */
+/* margin-right: 2vw; */
 font-weight: 700;
 /* line-height: 115px; */
 /* Text style for "23.900 , 2" */
@@ -292,8 +294,9 @@ font-weight: 700;
 
 .symbol {
     /* width: 245px; */
+    width: 15vw;
     display: flex;
-    margin-left: 6vw;
+    /* margin-left: 6vw; */
     justify-content: center;
     align-items: center;
     align-content: center;
