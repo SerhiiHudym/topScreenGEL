@@ -41,9 +41,6 @@ function connect() {
 	ws.onmessage = function(event) {
 		console.log('Data received.');
 		const currenciesRates = JSON.parse(event.data);
-		// currenciesRates['USD GEL'].rquantity = 32.124123;
-		// currenciesRates['EUR GEL'].lquantity = 321.24123;
-		// currenciesRates['EUR GEL'].rquantity = 3212.4123;
 	
 		console.log(currenciesRates);
 	
