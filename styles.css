@@ -15,7 +15,6 @@
 
 #top {
     display: flex;
-    /* width: 100%; */
 	height: 35vh;
 	justify-content: space-between;
 }
@@ -35,23 +34,14 @@
 }
 
 #timeText {
-	color: #b1b2b3;
 	font-family: "Magistral C";
 }
 
-#dateTextUkr {
+#dateTextUkr, #timeTextUkr {
 	color: #181716;
 }
 
-#dateTextEng {
-	color: #B1B2B3;
-}
-
-#timeTextUkr {
-	color: #181716;
-}
-
-#timeTextEng {
+#dateTextEng, #timeTextEng, #timeText {
 	color: #B1B2B3;
 }
 
@@ -70,7 +60,6 @@
 	margin-top: 1.6vh;
 	margin-right: 2vw;
     width: 73vw;
-	/* width: 73vw; */
 	align-items: center;
 	border: 5px solid rgba(217, 218, 218, 0.4);
 	border-radius: 5px;
@@ -116,7 +105,6 @@
 #middle {
 	display: flex;
 	justify-content: space-around;
-    /* width: 73vw; */
     width: 73vw;
 	height: 10vh;
 	margin-right: 2vw;
@@ -156,7 +144,6 @@
 
 .centerCurrencies {
 	display: flex;
-	/* width: 43vw; */
 }
 
 .symbolName {
@@ -187,8 +174,6 @@
 	font-family: "digital";
     font-size: 17vh;
     width: 27vw;
-	/* margin-left: 6vw; */
-	/* margin-right: 2vw; */
 	font-weight: 700;
 }
 
@@ -196,9 +181,6 @@
 	color: #e6301f;
 	font-family: "digital";
     font-size: 17vh;
-    /* width: 26vw; */
-	/* margin-left: 6vw; */
-	/* margin-right: 2vw; */
 	font-weight: 700;
 }
 
@@ -210,11 +192,6 @@
 	align-items: center;
 	align-content: center;
 }
-/* 
-#imgEUR {
-    width: 20vw;
-    height: 20vh;
-} */
 
 #imgEUR {
     height: 17.8vh;
@@ -223,10 +200,6 @@
 .images {
     width: 15vw;
     height: 15vh;
-    /* width: 15%; */
-    /* height: 15%; */
-    /* width: 30%; */
-    /* height: 20%; */
 	box-shadow: 5px 7px 10px 3px rgba(24, 23, 22, 0.6);
 	border: 5px solid #d9dada;
 	border-radius: 5px;
@@ -234,14 +207,11 @@
 
 .imagesCountry {
     width: 15vw;
-    /* width: 130%; */
-    /* height: 130%; */
 }
 
 .symbol {
     display: flex;
     width: 9vw;
-	/* margin-left: 3vw; */
 	justify-content: center;
 	align-items: center;
 	align-content: center;

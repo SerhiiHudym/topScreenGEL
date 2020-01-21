@@ -1,108 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Top Screen</title>
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Top Screen</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="wrapper">
-
-        <div id="top">
-            <div id="dateAndTime">
-                <div id="date">
-                    <div id="dateText">
-                        <div id="dateTextUkr">Дата</div>
-                        <div id="dateTextEng">Date</div>
-                    </div>
-                    <div id="dateValue">03.06</div>
-                </div>
-                <div id="time">
-                    <div id="timeText">
-                        <div id="timeTextUkr">Час</div>
-                        <div id="timeTextEng">Time</div>
-                    </div>
-                    <div id="timeValue">23.08</div>
-                </div>
-            </div>
-
-            <div id="header">
-                <div id="headerExchange">
-                    <div id="exchangeUKR">
-                        обмін  валют
-                    </div>
-                    <div id="exchangeENG">
-                        currency  exchange
-                    </div>
-                </div>
-
-                <div id="middle-center">
-                    <!-- <div id="middle" class="sell">
-                        <div id="buy">Продажа</div>
-                        <div id="at">We sell at</div>
-                    </div> -->
-                    <div id="middle" class="buy">
-                        <!-- <div id="buy">Покупка</div> -->
-                        <div id="buy">We sell at</div>
-                        <div id="at">Currency</div>
-                        <div id="buy">We buy at</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div id="main">
-            <div id="usd" class="row">
-                <div id="imgUSD" class="images"><img class="imagesCountry" src="images/currencies/usd.png" alt="USD image"></div>
-                <div id="centerUSD" class="centerCurrencies">
-                    <div id="usdSymbol" class="symbol">
-                        <img src="images/symbols/usdSymbol.png" alt="USD symbol">
-                    </div>
-                </div>
-                <div id="priceUSDSell" class="pricesLeft"><!--05.050--></div>
-                <div id="nameUSD" class="currenciesNames">USD</div>
-                <div id="priceUSDBuy" class="pricesRight"><!--05.050--></div>
-            </div>
-            <div id="eur" class="row">
-                <div id="imgEUR" class="images"><img class="imagesCountry" src="images/currencies/eur.png" alt="EUR image"></div>
-                <div id="centerEUR" class="centerCurrencies">
-                    <div id="eurSymbol" class="symbol">
-                        <img src="images/symbols/eurSymbol.png" alt="EUR symbol">
-                    </div>
-                </div>
-                <div id="priceEURSell" class="pricesLeft"><!--06.300--></div>
-                <div id="nameEUR" class="currenciesNames">EUR</div>
-                <div id="priceEURBuy" class="pricesRight"><!--06.300--></div>
-            </div>
-            <!-- <div id="rub" class="row">
-                <div id="imgRUB" class="images"><img class="imagesCountry" src="images/currencies/rub.png" alt="PLN image"></div>
-                <div id="centerRUB" class="centerCurrencies">
-                    <div id="rubSymbol" class="symbol">
-                        <img src="images/symbols/rubSymbol.png" alt="RUB symbol">
-                    </div>
-                </div>
-                <div id="priceRUB" class="pricesLeft">00.001</div>
-                <div id="nameRUB" class="currenciesNames">RUB</div>
-                <div id="priceRUB" class="pricesRight">00.002</div>
-            </div> -->
-            <!-- <div id="pln" class="row">
-                <div id="imgPLN" class="images"><img src="images/currencies/pln.png" alt="PLN image"></div>
-                <div id="centerPLN" class="centerCurrencies">
-                    <div id="plnSymbol" class="symbol">
-                        <img src="images/symbols/plnSymbol.png" alt="PLN symbol">
-                    </div>
-                </div>
-                <div id="pricePLN" class="prices">06.150</div>
-                <div id="namePLN" class="currenciesNames">PLN</div>
-                <div id="pricePLN" class="prices">06.150</div>
-            </div> -->
-        </div>
-    </div>
-    <script src="main.js"></script>
+	<div id="wrapper">
+		<div id="top">
+			<div id="dateAndTime">
+				<div id="date">
+					<div id="dateText">
+						<div id="dateTextUkr">Дата</div>
+						<div id="dateTextEng">Date</div>
+					</div>
+					<div id="dateValue">03.06</div>
+				</div>
+				<div id="time">
+					<div id="timeText">
+						<div id="timeTextUkr">Час</div>
+						<div id="timeTextEng">Time</div>
+					</div>
+					<div id="timeValue">23.08</div>
+				</div>
+			</div>
+			<div id="header">
+				<div id="headerExchange">
+					<div id="exchangeUKR">
+						обмін  валют
+					</div>
+					<div id="exchangeENG">
+						currency  exchange
+					</div>
+				</div>
+				<div id="middle-center">
+					<div id="middle" class="buy">
+						<div id="buy">We sell at</div>
+						<div id="at">Currency</div>
+						<div id="buy">We buy at</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div id="usd" class="row">
+				<div id="imgUSD" class="images"><img class="imagesCountry" src="images/currencies/usd.png" alt="USD image"></div>
+				<div id="centerUSD" class="centerCurrencies">
+					<div id="usdSymbol" class="symbol">
+						<img src="images/symbols/usdSymbol.png" alt="USD symbol">
+					</div>
+				</div>
+				<div id="priceUSDSell" class="pricesLeft"></div>
+				<div id="nameUSD" class="currenciesNames">USD</div>
+				<div id="priceUSDBuy" class="pricesRight"></div>
+			</div>
+			<div id="eur" class="row">
+				<div id="imgEUR" class="images"><img class="imagesCountry" src="images/currencies/eur.png" alt="EUR image"></div>
+				<div id="centerEUR" class="centerCurrencies">
+					<div id="eurSymbol" class="symbol">
+						<img src="images/symbols/eurSymbol.png" alt="EUR symbol">
+					</div>
+				</div>
+				<div id="priceEURSell" class="pricesLeft"></div>
+				<div id="nameEUR" class="currenciesNames">EUR</div>
+				<div id="priceEURBuy" class="pricesRight"></div>
+			</div>
+		</div>
+	</div>
+	<script src="main.js"></script>
 </body>
 </html>
