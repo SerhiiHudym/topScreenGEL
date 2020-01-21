@@ -1,3 +1,4 @@
+// Time and date render section
 const renderDateAndTime = () => {
 	let today = new Date();
 	let month = today.getMonth();
@@ -31,52 +32,82 @@ const renderDateAndTime = () => {
 
 setInterval(renderDateAndTime, 1000);
 
-let socket = new WebSocket("ws://192.168.13.85:9990");
-
-socket.onopen = function(e) {
-	console.log("Connection is established.");
-};
-
-socket.onmessage = function(event) {
-	console.log('Data received.');
-	const currenciesRates = JSON.parse(event.data);
-	console.log(currenciesRates);
-
-	fillUI = currency => {
-		let name = document.querySelector(`#name${currency}`);
-		let price = document.querySelector(`#price${currency}`);
-		name.innerText = currency;
-
-		if (currenciesRates[currency + ' GEL'].lquantity.toFixed(3) < 10) {
-			price.innerText = currenciesRates[currency + ' GEL'].lquantity.toFixed(3);
-			//'0' + currenciesRates[currency + ' GEL'].lquantity.toFixed(3);
-		} else {
-			price.innerText = currenciesRates[currency + ' GEL'].lquantity.toFixed(3);
+function connect() {
+	let ws = new WebSocket("ws://192.168.13.85:9990");
+	ws.onopen = function(e) {
+		console.log("Connection is established.");
+	};
+  
+	ws.onmessage = function(event) {
+		console.log('Data received.');
+		const currenciesRates = JSON.parse(event.data);
+		// currenciesRates['USD GEL'].rquantity = 32.124123;
+		// currenciesRates['EUR GEL'].lquantity = 321.24123;
+		// currenciesRates['EUR GEL'].rquantity = 3212.4123;
+	
+		console.log(currenciesRates);
+	
+		fillUI = currency => {
+			let name = document.querySelector(`#name${currency}`);
+			let priceSell = document.querySelector(`#price${currency}Sell`);
+			let priceBuy = document.querySelector(`#price${currency}Buy`);
+			name.innerText = currency;
+	
+			let sellPrice = currenciesRates[currency + ' GEL'].lquantity;
+			let buyPrice = currenciesRates[currency + ' GEL'].rquantity;
+	
+			if (sellPrice < 10) {
+				fillPrices(4, true)
+			} else if (sellPrice < 100) {
+				fillPrices(3, true)
+			} else if (sellPrice < 1000) {
+				fillPrices(2, true)
+			} else if (sellPrice < 10000) {
+				fillPrices(1, true)
+			}
+	
+			if (buyPrice < 10) {
+				fillPrices(4, false)
+			} else if (buyPrice < 100) {
+				fillPrices(3, false)
+			} else if (buyPrice < 1000) {
+				fillPrices(2, false)
+			} else if (buyPrice < 10000) {
+				fillPrices(1, false)
+			}
+			
+			function fillPrices(pointToFix, isSellPrice) {
+				isSellPrice 
+					? priceSell.innerText = currenciesRates[currency + ' GEL'].lquantity.toFixed(pointToFix)
+					: priceBuy.innerText = currenciesRates[currency + ' GEL'].rquantity.toFixed(pointToFix);
+			}
 		}
-	}
-
-	for (let i in currenciesRates) {
-		switch (i.replace(' GEL', '')) {
-			case 'USD':
-				fillUI('USD')
-			case 'EUR':
-				fillUI('EUR')
-			case 'RUB':
-				fillUI('RUB')
-			// case 'PLN':
-			// 	fillUI('PLN')
+	
+		for (let i in currenciesRates) {
+			switch (i.replace(' GEL', '')) {
+				case 'USD':
+					fillUI('USD')
+				case 'EUR':
+					fillUI('EUR')
+				// case 'RUB':
+				// 	fillUI('RUB')
+				// case 'PLN':
+				// 	fillUI('PLN')
+			}
 		}
-	}
-};
+	};
+  
+	ws.onclose = function(e) {
+	  console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
+	  setTimeout(function() {
+		connect();
+	  }, 1000);
+	};
+  
+	ws.onerror = function(err) {
+	  console.error('Socket encountered error: ', err.message, 'Closing socket');
+	  ws.close();
+	};
+}
 
-socket.onclose = function(event) {
-	if (event.wasClean) {
-		console.log(`[close] Соединение закрыто чисто, код=${event.code} причина=${event.reason}`);
-	} else {
-		console.log('Connection was rejected by an error.')
-	}
-};
-
-socket.onerror = function(error) {
-	console.log(error.message);
-};
+connect();
